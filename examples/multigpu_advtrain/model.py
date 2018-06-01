@@ -254,9 +254,9 @@ class LayerNorm(LayernGPU):
             trainable=self.training)
 
     def fprop_noscope(self, x):
-        mean = tf.reduce_mean(x, (1, 2), keep_dims=True)
+        mean = tf.reduce_mean(x, (1, 2), keepdims=True)
         x = x - mean
         std = tf.sqrt(1e-7 +
-                      tf.reduce_mean(tf.square(x), (1, 2), keep_dims=True))
+                      tf.reduce_mean(tf.square(x), (1, 2), keepdims=True))
         x = x / std
         return x * self.gamma + self.beta

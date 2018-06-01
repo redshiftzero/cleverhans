@@ -213,7 +213,7 @@ class Attack(object):
             labels = kwargs['y_target']
         else:
             preds = self.model.get_probs(x)
-            preds_max = tf.reduce_max(preds, 1, keep_dims=True)
+            preds_max = tf.reduce_max(preds, 1, keepdims=True)
             original_predictions = tf.to_float(tf.equal(preds,
                                                         preds_max))
             labels = tf.stop_gradient(original_predictions)
@@ -387,7 +387,7 @@ class BasicIterativeMethod(Attack):
 
         # Fix labels to the first model predictions for loss computation
         model_preds = self.model.get_probs(x)
-        preds_max = tf.reduce_max(model_preds, 1, keep_dims=True)
+        preds_max = tf.reduce_max(model_preds, 1, keepdims=True)
         if self.y_target is not None:
             y = self.y_target
             targeted = True
@@ -526,7 +526,7 @@ class MomentumIterativeMethod(Attack):
 
         # Fix labels to the first model predictions for loss computation
         y, nb_classes = self.get_or_guess_labels(x, kwargs)
-        y = y / tf.reduce_sum(y, 1, keep_dims=True)
+        y = y / tf.reduce_sum(y, 1, keepdims=True)
         targeted = (self.y_target is not None)
 
         from . import utils_tf
@@ -546,7 +546,7 @@ class MomentumIterativeMethod(Attack):
             grad = grad / tf.maximum(avoid_zero_div,
                                      tf.reduce_mean(tf.abs(grad),
                                                     red_ind,
-                                                    keep_dims=True))
+                                                    keepdims=True))
             momentum = self.decay_factor * momentum + grad
 
             if self.ord == np.inf:
@@ -555,12 +555,12 @@ class MomentumIterativeMethod(Attack):
                 norm = tf.maximum(avoid_zero_div,
                                   tf.reduce_sum(tf.abs(momentum),
                                                 red_ind,
-                                                keep_dims=True))
+                                                keepdims=True))
                 normalized_grad = momentum / norm
             elif self.ord == 2:
                 square = tf.reduce_sum(tf.square(momentum),
                                        red_ind,
-                                       keep_dims=True)
+                                       keepdims=True)
                 norm = tf.sqrt(tf.maximum(avoid_zero_div, square))
                 normalized_grad = momentum / norm
             else:
