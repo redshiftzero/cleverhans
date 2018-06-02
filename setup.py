@@ -14,7 +14,7 @@ setup(name='cleverhans',
       # Explicit dependence on TensorFlow is not supported.
       # See https://github.com/tensorflow/tensorflow/issues/7166
       extras_require={
-        "tf": ["tensorflow>=1.0.0"],
-        "tf_gpu": ["tensorflow-gpu>=1.0.0"],
+        "tf": ["tensorflow>=1.4.1"],
+        "tf_gpu": ["tensorflow-gpu>=1.4.1"],
       },
       packages=find_packages())

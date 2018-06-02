@@ -68,7 +68,7 @@ You may want to make that change permanent through your shell's profile.
 
 Although CleverHans is likely to work on many other machine configurations, we
 currently [test it](https://travis-ci.org/tensorflow/cleverhans) with Python
-{2.7, 3.5} and TensorFlow {1.0, 1.1} on Ubuntu 14.04.5 LTS (Trusty Tahr).
+{2.7, 3.5} and TensorFlow {1.4.1, 1.8.0} on Ubuntu 14.04.5 LTS (Trusty Tahr).
 
 ## Tutorials
 
