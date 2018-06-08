@@ -3,3 +3,4 @@ pycodestyle
 scipy
 tensorflow
 matplotlib
+scikit-learn
