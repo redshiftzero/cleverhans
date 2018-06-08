@@ -28,15 +28,20 @@ def data_mnist(datadir='/tmp/', train_start=0, train_end=60000, test_start=0,
     from sklearn.datasets import fetch_mldata
     mnist = fetch_mldata('MNIST original', data_home=datadir)
 
-    np.random.seed(1234)
-    random_permutation = np.random.permutation(mnist.data.shape[0])
-    mnist_shuffled_data = mnist.data[random_permutation]
-    mnist_shuffled_target = mnist.target[random_permutation]
+    X_train = mnist.data[:60000] / 255.
+    Y_train = mnist.target[:60000]
+    X_test = mnist.data[60000:] / 255.
+    Y_test = mnist.target[60000:]
 
-    X_train = mnist_shuffled_data[:60000] / 255.
-    Y_train = mnist_shuffled_target[:60000]
-    X_test = mnist_shuffled_data[60000:] / 255.
-    Y_test = mnist_shuffled_target[60000:]
+    np.random.seed(1234)
+    train_shuffle = np.random.permutation(X_train.shape[0])
+    X_train = X_train[train_shuffle]
+    Y_train = Y_train[train_shuffle]
+
+    np.random.seed(1234)
+    test_shuffle = np.random.permutation(X_test.shape[0])
+    X_test = X_test[test_shuffle]
+    Y_test = Y_test[test_shuffle]
 
     X_train = np.reshape(X_train, (60000, 28, 28, 1))
     X_test = np.reshape(X_test, (10000, 28, 28, 1))
