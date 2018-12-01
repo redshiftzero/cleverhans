@@ -26,7 +26,7 @@ import logging
 import time
 
 import tensorflow as tf
-from tensorflow.python.platform import flags
+from tensorflow.python.platform import flags  # pylint: disable=no-name-in-module
 
 from cleverhans.attacks import ProjectedGradientDescent, Semantic
 from cleverhans.evaluation import accuracy

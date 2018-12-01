@@ -27,7 +27,7 @@ import warnings
 
 import numpy as np
 import tensorflow as tf
-from tensorflow.python.platform import flags
+from tensorflow.python.platform import flags  # pylint: disable=no-name-in-module
 
 from cleverhans.utils_tf import silence
 # We need to disable pylint's complaints about import order because `silence`

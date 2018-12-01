@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from tensorflow.python.client import device_lib
+from tensorflow.python.client import device_lib  # pylint: disable=no-name-in-module
 from cleverhans.devtools.checks import CleverHansTest
 
 HAS_GPU = 'GPU' in set(

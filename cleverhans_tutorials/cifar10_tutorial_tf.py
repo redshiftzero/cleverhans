@@ -12,7 +12,7 @@ from __future__ import unicode_literals
 import logging
 import numpy as np
 import tensorflow as tf
-from tensorflow.python.platform import flags
+from tensorflow.python.platform import flags  # pylint: disable=no-name-in-module
 
 from cleverhans.attacks import FastGradientMethod
 from cleverhans.augmentation import random_horizontal_flip, random_shift

@@ -16,7 +16,7 @@ from __future__ import unicode_literals
 import logging
 import numpy as np
 import tensorflow as tf
-from tensorflow.python.platform import flags
+from tensorflow.python.platform import flags  # pylint: disable=no-name-in-module
 
 from cleverhans.utils import AccuracyReport
 from cleverhans.utils_tfe import train, model_eval

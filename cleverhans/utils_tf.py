@@ -13,7 +13,7 @@ import numpy as np
 import six
 from six.moves import xrange
 import tensorflow as tf
-from tensorflow.python.client import device_lib
+from tensorflow.python.client import device_lib  # pylint: disable=no-name-in-module
 
 from cleverhans.compat import reduce_sum, reduce_mean
 from cleverhans.compat import reduce_max

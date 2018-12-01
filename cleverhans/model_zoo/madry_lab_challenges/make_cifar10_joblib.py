@@ -13,7 +13,7 @@ import numpy as np
 import logging
 
 import tensorflow as tf
-from tensorflow.python.platform import app, flags
+from tensorflow.python.platform import app, flags  # pylint: disable=no-name-in-module
 from cleverhans.utils import set_log_level, to_categorical, safe_zip
 from cleverhans.utils_tf import model_eval
 from cleverhans import serial

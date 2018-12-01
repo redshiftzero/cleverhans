@@ -14,7 +14,7 @@ import logging
 import numpy as np
 from six.moves import xrange
 import tensorflow as tf
-from tensorflow.python.platform import flags
+from tensorflow.python.platform import flags  # pylint: disable=no-name-in-module
 
 from cleverhans.attacks import FastGradientMethod
 from cleverhans.attacks_tf import jacobian_graph, jacobian_augmentation

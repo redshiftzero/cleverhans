@@ -11,8 +11,8 @@ import time
 
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
-from tensorflow.python.platform import app
-from tensorflow.python.platform import flags
+from tensorflow.python.platform import app  # pylint: disable=no-name-in-module
+from tensorflow.python.platform import flags  # pylint: disable=no-name-in-module
 from madry_mnist_model import MadryMNIST
 from cleverhans.utils_tf import model_eval
 from cleverhans.attacks import FastGradientMethod

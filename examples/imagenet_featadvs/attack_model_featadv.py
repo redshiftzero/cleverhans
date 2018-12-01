@@ -9,8 +9,8 @@ from __future__ import print_function
 import numpy as np
 
 import tensorflow as tf
-from tensorflow.python.platform import app
-from tensorflow.python.platform import flags
+from tensorflow.python.platform import app  # pylint: disable=no-name-in-module
+from tensorflow.python.platform import flags  # pylint: disable=no-name-in-module
 
 from cleverhans.attacks import FastFeatureAdversaries
 from model import make_imagenet_cnn

@@ -10,8 +10,8 @@ from __future__ import unicode_literals
 import logging
 from collections import namedtuple
 
-from tensorflow.python.platform import app
-from tensorflow.python.platform import flags
+from tensorflow.python.platform import app  # pylint: disable=no-name-in-module
+from tensorflow.python.platform import flags  # pylint: disable=no-name-in-module
 
 
 from trainer import TrainerMultiGPU
